@@ -2,7 +2,7 @@
 #include "LinkedList.hpp"
 
 TEST(LNKLST, push_ops) {
-  LinkedList list;
+  mds::LinkedList list;
   list.push_back("C");
   list.push_back("D");
   list.push_front("B");
@@ -17,7 +17,7 @@ TEST(LNKLST, push_ops) {
 }
 
 TEST(LNKLST, pop_ops) {
-  LinkedList list;
+  mds::LinkedList list;
   list.push_back("B");
   list.push_front("A");
   
@@ -29,7 +29,7 @@ TEST(LNKLST, pop_ops) {
 }
 
 TEST(LNKLST, get_data_ops) {
-  LinkedList list;
+  mds::LinkedList list;
   list.push_back("C");
   list.push_front("B");
   list.push_back("D");
@@ -43,7 +43,7 @@ TEST(LNKLST, get_data_ops) {
 }
 
 TEST(LNKLST, delete_ops) {
-  LinkedList list;
+  mds::LinkedList list;
   list.push_front("A");
   list.push_front("B");
   list.push_back("C");
@@ -61,7 +61,7 @@ TEST(LNKLST, delete_ops) {
 }
 
 TEST(LNKLST, insert_ops) {
-  LinkedList list;
+  mds::LinkedList list;
   list.push_front("B");
   list.push_back("D");
 

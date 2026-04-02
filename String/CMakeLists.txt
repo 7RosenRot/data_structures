@@ -1,10 +1,10 @@
-cmake_minimum_required(VERSION 4.2)
+cmake_minimum_required(VERSION 3.20)
 set(This String)
 
 project(${This} CXX)
 
-set(CMAKE_CXX_STANDART 17)
-set(CMAKE_CXX_STANDART_REAUIRED ON)
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_POSITION_INDEPENDENT_CODE ON)
 
 set(Headers
@@ -15,8 +15,8 @@ set(Sources
 )
 
 add_library(${This} STATIC 
-  ${Sources}
   ${Headers}
+  ${Sources}
 )
 
 target_include_directories(${This} PUBLIC

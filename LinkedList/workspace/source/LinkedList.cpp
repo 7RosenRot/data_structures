@@ -1,40 +1,22 @@
-#include <iostream>
-#include <fstream>
 #include <vector>
-#include <unordered_map>
 #include <string>
 
 #include <LinkedList.hpp>
 
-void check(ListNode* head) {
-  while (head != nullptr) {
-    std::cout << head->data;
-
-    if (head->rand != nullptr) {
-      std::cout << ' ' << head->rand->data << std::endl;
-    }
-    else {
-      std::cout << ' ' << "nullptr" << std::endl;
-    }
-
-    head = head->next;
-  }
-}
-
-LinkedList::LinkedList() {
+mds::LinkedList::LinkedList() {
   m_head = nullptr;
   m_tail = nullptr;
 
   m_length = 0;
 }
 
-LinkedList::~LinkedList() {
+mds::LinkedList::~LinkedList() {
   while (m_head != nullptr) {
     pop_back();
   }
 }
 
-ListNode* LinkedList::push_back(std::string push_data) {
+ListNode* mds::LinkedList::push_back(std::string push_data) {
   ListNode* current = new ListNode();
   
   if (m_head == nullptr) {
@@ -55,7 +37,7 @@ ListNode* LinkedList::push_back(std::string push_data) {
   return current;
 }
 
-void LinkedList::pop_back() {
+void mds::LinkedList::pop_back() {
   if (m_tail == nullptr) {
     return;
   }
@@ -79,7 +61,7 @@ void LinkedList::pop_back() {
   m_length -= 1;
 }
 
-ListNode* LinkedList::push_front(std::string push_data) {
+ListNode* mds::LinkedList::push_front(std::string push_data) {
   ListNode* current = new ListNode();
 
   if (m_tail == nullptr) {
@@ -100,7 +82,7 @@ ListNode* LinkedList::push_front(std::string push_data) {
   return current;
 }
 
-void LinkedList::pop_front() {
+void mds::LinkedList::pop_front() {
   if (m_head == nullptr) {
     return;
   }
@@ -124,7 +106,7 @@ void LinkedList::pop_front() {
   m_length -= 1;
 }
 
-ListNode* LinkedList::get_ptr(int index) {  
+ListNode* mds::LinkedList::get_ptr(int index) {  
   if (index < 0 || index >= m_length) {
     return nullptr;
   }
@@ -144,7 +126,7 @@ ListNode* LinkedList::get_ptr(int index) {
   return current;
 }
 
-std::string LinkedList::operator[](int index) {
+std::string mds::LinkedList::operator[](int index) {
   ListNode* current = get_ptr(index);
   
   if (current == nullptr) {
@@ -154,7 +136,7 @@ std::string LinkedList::operator[](int index) {
   return current->data;
 }
 
-void LinkedList::insert_node(int index, std::string insert_data) {
+void mds::LinkedList::insert_node(int index, std::string insert_data) {
   ListNode* current = get_ptr(index);
   
   if (current == nullptr) {
@@ -179,7 +161,7 @@ void LinkedList::insert_node(int index, std::string insert_data) {
   m_length += 1;
 }
 
-void LinkedList::delete_node(int index) {
+void mds::LinkedList::delete_node(int index) {
   ListNode* current = get_ptr(index);
 
   if (current == m_head) {
